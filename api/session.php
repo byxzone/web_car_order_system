@@ -1,0 +1,11 @@
+<?php 
+	session_start();
+	if(isset($_POST['m'])){
+		if($_POST['m']=='empty'){
+			unset($_SESSION['user']);
+			die('已成功退出'); 
+		}
+		die('1');
+	}
+	die('2');
+?>

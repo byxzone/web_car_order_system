@@ -1,0 +1,22 @@
+	<script>
+	function feedback_submit(){
+		var content=document.getElementById('feedback').value;
+		if(content=='') mui.alert('内容不能为空！');
+		else{
+			xmlhttp=new XMLHttpRequest();
+									xmlhttp.onreadystatechange=function(){
+									if (xmlhttp.readyState==4 && xmlhttp.status==200){
+										mui.alert(xmlhttp.responseText);
+									}
+								}
+								xmlhttp.open("POST","api/feedback.php?",true);
+								xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+								xmlhttp.send('user=<?php echo $user;?>&content='+content);
+		}
+	}
+	</script>
+	<div class="mui-input-row">
+	<p>您可将您学车中不满意的地方，或者觉得我们需要改进的地方反馈给我们，我们将做出改进。如果您的教练的某些行为让您感到不适，也可以在这里进行反馈!</p>
+			<input type="text" class="mui-input" placeholder="" id="feedback">
+			<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" onclick="feedback_submit();">提交</button>
+		</div>

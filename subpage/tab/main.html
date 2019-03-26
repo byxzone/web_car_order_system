@@ -1,0 +1,74 @@
+<!-- 图片轮播开始 -->
+				<div class="mui-content">
+				<div id="slider" class="mui-slider">
+				  <div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+					  <a onclick="window.location.hash='freetry';">
+						<img src="img/banner.png">
+					  </a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+					  <a onclick="window.location.hash='freetry';">
+						<img src="img/banner.png">
+					  </a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+					  <a onclick="window.location.hash='freetry';">
+						<img src="img/banner.png">
+					  </a>
+					</div>
+				  </div>
+				  <div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+				  </div>
+				</div>
+				</div>
+				<!-- 图片轮播结束 -->
+				
+				<!-- 顶部标题 -->
+				<div class="mui-card  mui-card-media">
+	<div class="mui-card-footer">学车套餐</div>
+		</div>
+		<!-- 顶部标题 -->
+		
+		<!-- 班型列表 -->
+		<div class="mui-card">
+		<ul class="mui-table-view">
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/xuesheng.png">
+            <div class="mui-media-body" onclick="mui.openWindow('subpage/class1.html');">
+                学生VIP班&nbsp;&nbsp;&nbsp;&nbsp;<span class="mui-badge mui-badge-primary">2880.0/元</span>
+                <p class='mui-ellipsis'>收费一次到底&nbsp;&nbsp;&nbsp;&nbsp;自主预约练车<br>全程管家服务&nbsp;&nbsp;&nbsp;&nbsp;自营驾培教练</p>
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/vip.png">
+            <div class="mui-media-body" onclick="mui.openWindow('subpage/class2.html');">
+                商务预约班&nbsp;&nbsp;&nbsp;&nbsp;<span class="mui-badge mui-badge-primary">3080.0/元</span>
+                <p class='mui-ellipsis'>收费一次到底&nbsp;&nbsp;&nbsp;&nbsp;自主预约练车<br>全程管家服务&nbsp;&nbsp;&nbsp;&nbsp;自营驾培教练</p>
+            </div>
+        </a>
+    </li>
+    
+</ul>
+</div>
+<!-- 班型列表结束 -->
+<div class="mui-card">
+<ul class="mui-table-view">
+    <li class="mui-table-view-cell" onclick="mui.openWindow('subpage/liucheng.html');">
+     <a class="mui-navigate-right">学车流程</a>
+    </li>
+    <li class="mui-table-view-cell" onclick="mui.openWindow('subpage/chengnuo.html');">
+        <a class="mui-navigate-right">服务承诺</a>
+    </li>
+    <li class="mui-table-view-cell" onclick="mui.alert('联系电话:13032022294')">
+        <a class="mui-navigate-right">联系我们</a>
+    </li>
+</ul>
+</div>

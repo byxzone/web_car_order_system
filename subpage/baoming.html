@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.css" rel="stylesheet" />
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">报名</h1>
+		</header>
+		<div class="mui-content">
+		<div class="mui-card">
+					<img src=../img/chenxi_touming.fw.png></img>
+					</div>
+				<script type="text/javascript">
+					document.addEventListener('DOMContentLoaded', function() {
+						document.getElementById("input_check").addEventListener('click', function() {
+							var check = true;
+							mui("#input_example input").each(function() {
+								//若当前input为空，则alert提醒 
+								if(!this.value || this.value.trim() == "") {
+									var label = this.previousElementSibling;
+									mui.alert(label.innerText + "不允许为空");
+									check = false;
+									return false;
+								}
+							}); //校验通过，继续执行业务逻辑 
+							if(check){
+								xmlhttp=new XMLHttpRequest();
+								 xmlhttp.onreadystatechange=function(){
+										if (xmlhttp.readyState==4 && xmlhttp.status==200){
+											mui.alert(xmlhttp.responseText);
+										}
+								}
+								xmlhttp.open("POST","../api/signup.php?",true);
+								$name=document.getElementById("name").value;
+								$phone=document.getElementById("phone").value;
+								xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+								xmlhttp.send('name='+$name+'&phone='+$phone);
+							}
+			
+						})
+		
+					})
+				</script>
+				<script src="../js/mui.js"></script>
+				<script type="text/javascript">
+					mui.init()
+				</script>
+				<form class="mui-input-group">
+		  <div class="mui-card">
+						<div class="mui-input-group" id="input_example">
+							<div class="mui-input-row">
+								<label>姓名：</label>
+								<input type="text" class="mui-input-clear" name="name" id="name" placeholder="" >
+							</div>
+							<div class="mui-input-row">
+								<label>电话：</label>
+								<input type="text" class="mui-input-clear" name="phone" id="phone" placeholder="" >
+							</div>
+							<div class="mui-button-row">
+								<button type="button"  id="input_check" class="mui-btn mui-btn-primary">报名</button>
+							</div>
+						</div>
+					</div>
+		</form>
+		<div class="mui-card">
+			<div class='mui-card-footer'>
+			<p>
+			报名要求：<br>
+			无红绿色盲/没有在其他驾校报名/无摩托车驾驶证<br>
+
+			报名材料：<br>
+			六安班：身份证原件及四张照片即可<br>
+			合肥班：体检：身份证原件，1寸照片2张 面签：身份证原件<br>
+			</p>
+			</div>
+		</div>
+		</div>
+		</div>
+	</body>
+
+</html>

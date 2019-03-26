@@ -1,0 +1,53 @@
+	<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() {
+				document.getElementById("input_check").addEventListener('click', function() {
+					var check = true;
+					mui("#input_example input").each(function() {
+						//若当前input为空，则alert提醒 
+						if(!this.value || this.value.trim() == "") {
+							var label = this.previousElementSibling;
+							mui.alert(label.innerText + "不允许为空");
+							check = false;
+							return false;
+						}
+					}); //校验通过，继续执行业务逻辑 
+					if(check){
+						xmlhttp=new XMLHttpRequest();
+						 xmlhttp.onreadystatechange=function(){
+								if (xmlhttp.readyState==4 && xmlhttp.status==200){
+									mui.alert(xmlhttp.responseText);
+								}
+						}
+						xmlhttp.open("POST",'api/freetry.php?',true);
+						$name=document.getElementById("name").value;
+						$phone=document.getElementById("phone").value;
+						xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+						xmlhttp.send('name='+$name+'&phone='+$phone);
+					}
+					
+				})
+				
+			})
+		</script>
+		<div class="mui-card">
+	<img src="img/shixue.png" />
+</div>
+<div class="mui-card">
+	<form class="mui-input-group" id="input_example">
+    <div class="mui-input-row">
+        <label>姓名</label>
+    <input type="text" class="mui-input-clear" id="name">
+    </div>
+    <div class="mui-input-row">
+        <label>电话</label>
+        <input type="text" class="mui-input-clear" id="phone">
+    </div>
+	
+    <div class="mui-button-row">
+        <button type="button" class="mui-btn mui-btn-primary" id="input_check" >申请试学 （完全免费） </button>
+    </div>
+</form>
+	</div>
+	<div class="mui-card">
+		<div class="mui-card-footer">地址:青龙潭路与仙女路交口向东150米，合肥师范北门附近</div>
+	</div>
